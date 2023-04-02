@@ -117,6 +117,43 @@ h1, #main h2{
   box-sizing: border-box;
 }
 
+/*---------- Q&A SECTION ------------*/
+#form {
+  overflow: hidden;
+}
+
+.myform-1 input, .myform-1 select{
+  padding: 5px;
+  margin: 20px;
+  float: left;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.myform-2 {
+  float: right;
+  width: 40%;
+  padding: 5px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.myform-2 textarea {
+  padding: 110px 140px;
+  margin: 8px 40px;
+}
+
+.myform-2 input[type="reset"], .myform-2 input[type="submit"] {
+  padding: 5px 50px;
+  margin: 10px 60px;
+  background-color: #49a37b;
+  border-radius: 10px;
+}
+
+#form h2{
+  text-align: center;
+}
+
 /*---------- HISTORY SECTION --------*/
 #history h2{
   font-size: 31px;
