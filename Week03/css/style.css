@@ -14,7 +14,7 @@
   color: white;
 }
 
-h1, #contactheading, aside a, #history h2 {
+h1, .contactheading, aside a, .history h2 {
   text-transform: uppercase;
 }
 
@@ -23,59 +23,64 @@ body {
 }
 
 /*--------- HEADER SECTION ----------*/
-header {
-  height: 85px;
+.header {
+  height: 100px;
 }
 
-#hamburguer {
+.hamburguer {
   width: 50px;
   height: 50px;
   padding: 13px;
-  margin: 5px;
+  margin: 11px 5px;
 }
 
-#megalogo {
+.megalogo {
   float: right;
-  width: 250px;
+  width: 240px;
   height: 50px;
   padding: 10px;
-  margin: 5px;
+  margin: 10px 20px;
 }
 
 /*---------- ASIDE SECTION ----------*/
-aside {
+.aside {
   color: #fff;
   background-color: #e5f2e2;
   text-align: center;
-  width: 320px;
+  width: 350px;
+  padding: 15px;
+  margin: 15px;
 }
 
-nav ul li {
+.aside nav ul li {
   border: 1px #000 solid;
+  font-size: 23px;
   padding: 10px 3px;
-  margin: 8px 27px;
+  margin: 8px 43px;
   width: 180px;
   list-style: none;
   background-color: #49a37b;
   text-align: center;
 }
 
-aside a {
+.aside a {
   text-decoration: none;
   color: #fff;
 }
 
-#menuheading {
+.menuheading {
   color: #000;
+  font-size: 30px;
 }
 
 .sidebarblock {
   border: 1px #000 solid;
   overflow: hidden;
-  height: 300px;
+  height: 360px;
+  background-color: #49a37b;
 }
 
-aside img {
+.aside img {
   float: left;
   width: 70px;
   height: 70px;
@@ -88,6 +93,7 @@ aside img {
 .sidebarblock ul{
   float: right;
   width: 200px;
+  padding: 5px;
   box-sizing: border-box;
 }
 
@@ -104,83 +110,104 @@ aside nav ul li a:hover{
 }
 
 /*---------- MAIN SECTION ----------*/
-#boxmain {
+.main {
   overflow: hidden;
+  height: 300px;
 }
 
 h1{
+  font-size: 40px;
+  margin: 8px 20px;
+  padding: 8px 20px;
   font-family: 'Mulish', Arial, serif;
 }
 
-#boxmain p{
-  float: left;
-  width: 1034px;
-  height: 100px;
-  box-sizing: border-box;
-}
-
-h1, #main h2{
+.main h2{
+  display: inline-block;
   margin: 8px 20px;
   padding: 8px 20px;
+  width: 500px;
 }
 
-#main p{
-  margin: 12px 20px;
-  padding: 12px 20px;
-  letter-spacing: 2px;
-  line-height: 35px;
-}
-
-#gymbro {
-  float: right;
-  width: 180px;
-  height: 160px;
+.main p {
+  float: left;
+  width: 900px;
+  margin: 5px 20px;
+  padding: 5px 20px;
   box-sizing: border-box;
-  padding-right: 40px;
-  margin-right: 40px;
-  padding-bottom: 25px;
+}
+
+.gymbro {
+  float: right;
+  height: 200px;
+  width: 200px;
+  margin-right: 350px;
+  box-sizing: border-box;
 }
 
 /*---------- SERVICES SECTION --------*/
-#services {
+.services {
   overflow: hidden;
+  height: 600px;
 }
 
-#services h2{
-  padding-left: 100px;
+.services h2{
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 250px;
+  text-align: center;
+  border: 1px #000 solid;
+  border-radius: 8px;
+  background-color: #88a47c;
 }
-#services img {
+
+.services img {
   float: left;
   width: 75px;
   height: 75px;
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
-#services p {
+.services p {
+  font-size: 24px;
   margin: 10px;
   margin-left: 50px;
+  margin-right: 110px;
   padding: 10px;
-  padding-left: 50px;
+  padding-left: 40px;
+  padding-right: 100px;
 }
 
 .first {
   float: left;
   width: 50%;
-  padding: 10px;
-  height: 180px;
+  padding: 40px;
+  height: 270px;
   box-sizing: border-box;
 }
 
 .second {
   float: right;
   width: 50%;
-  padding: 10px;
-  height: 180px;
+  padding: 40px;
+  height: 270px;
   box-sizing: border-box;
 }
 
+.suggestions p {
+  padding: 10px 10px 20px 40px;
+}
+
 /*---------- Q&A SECTION ------------*/
-#form {
+.form {
   overflow: hidden;
+}
+
+.form h2{
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 3px;
 }
 
 .myform-1 input, .myform-1 select{
@@ -200,27 +227,34 @@ h1, #main h2{
 }
 
 .myform-2 textarea {
-  padding: 110px 140px;
-  margin: 8px 40px;
+  width: 500px;
+  height: 250px;
+  margin: 8px;
 }
 
-::placeholder, option, select {
+.form ::placeholder, option, select {
   color: #49a37b;
 }
 
-textarea::placeholder{
+.form textarea::placeholder{
   font-size: 17px;
 }
 
-.myform-2 input[type="reset"], .myform-2 input[type="submit"] {
-  padding: 5px 50px;
-  margin: 10px 60px;
+.myform-2 button {
+  font-size: 20px;
+  padding: 0 20px 5px 20px;
+  margin: 0 50px;
+  width: 160px;
+  height: 40px;
   background-color: #49a37b;
   border-radius: 10px;
 }
 
-#form h2{
-  text-align: center;
+.myform-2 button img {
+  width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  margin: 0 10px;
 }
 
 /*---------- HISTORY SECTION --------*/
@@ -230,7 +264,7 @@ textarea::placeholder{
   margin: 10px;
 }
 
-#history p {
+.history p {
   font-size: 26px;
   padding: 10px 20px;
   margin: 10px 20px;
@@ -238,7 +272,7 @@ textarea::placeholder{
 }
 
 /*-------- MEMBERSHIPS SECTION --------*/
-#memberships {
+.memberships {
   overflow: hidden;
 }
 
@@ -250,16 +284,18 @@ textarea::placeholder{
 }
 
 /*------------ FOOTER SECTION --------*/
-footer {
+.footer {
   overflow: hidden;
 }
 
-footer p{
+.footer p{
+  color: #000;
   font-size: 30px;
   float: left;
+  margin-left: 30px;
 }
 
-footer img {
+.footer img {
   float: right;
   width: 50px;
   height: 50px;

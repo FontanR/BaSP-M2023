@@ -6,16 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MegaRocket</title>
     <link rel="stylesheet" type="text/css" href="./css/style.css">
-    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="stylesheet" type="text/css" href="./css/reset.css">
     <link rel="icon" type="image/x-icon" href="../Assets/images/favicon.ico">
   </head>
   <body>
-    <header id="header" class="blockblue">
-      <img id="hamburguer" src="../Assets/images/hamburguer.png" alt="hamburguer">
-      <img id="megalogo" src="../Assets/images/megalogo.png" alt="megarocket logo">
+    <header id="header" class="header blockblue">
+      <img class="hamburguer" src="../Assets/images/hamburguer.png" alt="hamburguer">
+      <img class="megalogo" src="../Assets/images/megalogo.png" alt="megarocket logo">
     </header>
-    <aside>
-      <h2 id="menuheading">Menu</h2>
+    <aside class="aside">
+      <h2 class="menuheading">Menu</h2>
       <nav>
         <ul>
           <li>
@@ -32,33 +32,35 @@
           </li>
         </ul>
       </nav>
-        <h2 id="contactheading">contact us</h2>
         <div class="sidebarblock">
+          <h2 class="contactheading">contact us</h2>
           <ul>
             <li>information@untitled.tld</li>
             <li>(000) 000-0000</li>
             <li>1234 Somewhere Road #8254Nashville, TN 00000-0000</li>
           </ul>
-          <img src="../Assets/images/mail contact.png" alt="email contact">
-          <img src="../Assets/images/phone contact.png" alt="phone contact">
+          <img src="../Assets/images/mail-contact.png" alt="email contact">
+          <img src="../Assets/images/phone-contact.png" alt="phone contact">
           <img src="../Assets/images/adress.png" alt="adress">
       </div>
     </aside>
     <main>
-      <section id="main" class="blockgrey">
-          <h1>get fit get strong</h1>
-          <h2>Your ultimate gym experience starts here!</h2>
-          <div id="boxmain">
-            <p>
-              We offer a wide range of fitness classes and state-of-the-art equipment to help
-              you reach your fitness goals.
-              Our expert trainers are here to guide and motivate you every step of the way.
-              Join us and start your journey to a healthier, stronger you!
-            </p>
-            <img id="gymbro" src="../Assets/images/gymbro.png" alt="gymbro">
-          </div>
+      <section id="main" class="main blockgrey">
+        <h1>get fit get strong</h1>
+        <h2>Your ultimate gym experience starts here!</h2>
+        <img class="gymbro" src="../Assets/images/gymbro.png" alt="gymbro">
+        <p>
+          We offer a wide range of fitness classes and state-of-the-art equipment to help
+          you reach your fitness goals.
+        </p>
+        <p>
+          Our expert trainers are here to guide and motivate you every step of the way.
+        </p>
+        <p>
+          Join us and start your journey to a healthier, stronger you!
+        </p>
       </section>
-      <section id="services" class="blockgreen">
+      <section id="services" class="services blockgreen">
         <section id="appointment" class="first">
           <img src="../Assets/images/appointment.png" alt="appointment logo">
           <h2>Make an appointment</h2>
@@ -68,7 +70,7 @@
             budget and level of commitment.
           </p>
         </section>
-        <section id="memberships" class="second">
+        <section id="memberships" class="memberships second">
           <img src="../Assets/images/membership.png" alt="membership logo">
           <h2>Our memberships</h2>
           <p>
@@ -77,7 +79,7 @@
           </p>
         </section>
         <section id="become-member" class="first">
-          <img src="../Assets/images/become member.png" alt="become a member logo">
+          <img src="../Assets/images/become-member.png" alt="become a member logo">
           <h2>Become a Member</h2>
           <p>
             Join our fitness community and take advantage of all the perks of being a member.
@@ -85,7 +87,7 @@
             you reach your fitness potential.
           </p>
         </section>
-        <section id="suggestions" class="second">
+        <section id="suggestions" class="suggestions second">
           <img src="../Assets/images/suggestions.png" alt="suggestions logo">
           <h2>Suggestions</h2>
           <p>
@@ -95,13 +97,13 @@
           </p>
         </section>
       </section>
-      <section id="form" class="blockblue">
+      <section id="form" class="form blockblue">
         <h2>You have questions, ask away and get your answers</h2>
         <form>
           <div class="myform-2">
             <textarea name="message" placeholder="Your message..." required></textarea>
-            <input type="reset" value="Clear">
-            <input type="submit" value="Send">
+            <button type="reset"><img src="../Assets/images/x-icon.svg" alt="x icon">Clear</button>
+            <button type="submit"><img src="../Assets/images/mail-icon.svg" alt="mail icon">Submit</button>
           </div>
            <div class="myform-1">
             <input type="text" id="fname" name="fname" placeholder="Name">
@@ -116,7 +118,7 @@
           </div>
         </form>
       </section>
-      <section id="history" class="blockgreen">
+      <section id="history" class="history blockgreen">
         <h2>our history</h2>
         <p>
           Our journey began with a passion for fitness and a desire to create a community where
@@ -124,7 +126,7 @@
           to bulid a gym that was more t....
         </p>
       </section>
-      <section id="memberships" class="blockgrey">
+      <section id="memberships" class="memberships blockgrey">
         <div id="box-1" class="activitiesboxes">
           <h2>Our activities</h2>
           <ol>
@@ -161,7 +163,7 @@
         </div>
       </section>
     </main>
-    <footer id="footer" class="blockgreen">
+    <footer id="footer" class=" footer blockgreen">
       <p>Copyright © 2023 MegaRocket SA. All rights reserved.</p>
       <a href="https://www.youtube.com/watch?v=DUIP-TOxbQs" target="_blank"><img src="../Assets/images/facebook.png"
           alt="facebook logo"></a>
