@@ -14,7 +14,7 @@
   color: white;
 }
 
-h1, .contactheading, aside a, .history h2 {
+h1, .contactheading, .aside a, .history h2 {
   text-transform: uppercase;
 }
 
@@ -70,7 +70,7 @@ body {
 
 .menuheading {
   color: #000;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .sidebarblock {
@@ -103,7 +103,7 @@ body {
   margin-right: 30px;
 }
 
-aside nav ul li a:hover{
+.aside nav ul li a:hover{
   color: #373867;
   margin-left: 3px;
   transition: 0.4s;
@@ -247,25 +247,24 @@ h1{
   width: 160px;
   height: 40px;
   background-color: #49a37b;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: #000 2px solid;
 }
 
 .myform-2 button img {
   width: 20px;
   height: 20px;
-  padding: 0 5px;
-  margin: 0 10px;
 }
 
 /*---------- HISTORY SECTION --------*/
-#history h2{
-  font-size: 31px;
+.history h2{
+  font-size: 40px;
   padding: 10px;
   margin: 10px;
 }
 
 .history p {
-  font-size: 26px;
+  font-size: 35px;
   padding: 10px 20px;
   margin: 10px 20px;
   text-align: justify;

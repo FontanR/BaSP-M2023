@@ -11,7 +11,7 @@
   </head>
   <body>
     <header id="header" class="header blockblue">
-      <img class="hamburguer" src="../Assets/images/hamburguer.png" alt="hamburguer">
+      <a href="#"><img class="hamburguer" src="../Assets/images/hamburguer.png" alt="hamburguer"></a>
       <img class="megalogo" src="../Assets/images/megalogo.png" alt="megarocket logo">
     </header>
     <aside class="aside">
@@ -102,10 +102,16 @@
         <form>
           <div class="myform-2">
             <textarea name="message" placeholder="Your message..." required></textarea>
-            <button type="reset"><img src="../Assets/images/x-icon.svg" alt="x icon">Clear</button>
-            <button type="submit"><img src="../Assets/images/mail-icon.svg" alt="mail icon">Submit</button>
+            <button type="reset">
+              <img src="../Assets/images/x-icon.svg" alt="x icon">
+              <span>Clear</span>
+            </button>
+            <button type="submit">
+              <img src="../Assets/images/mail-icon.svg" alt="mail icon">
+              <span>Submit</span>
+            </button>
           </div>
-           <div class="myform-1">
+          <div class="myform-1">
             <input type="text" id="fname" name="fname" placeholder="Name">
             <input type="text" id="sname" name="sname" placeholder="Surname">
             <input type="email" id="email" name="email" placeholder="E-mail" required>
