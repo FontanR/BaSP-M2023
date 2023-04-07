@@ -1,0 +1,303 @@
+/*--------- GLOBAL SECTION ----------*/
+.blockblue {
+  background-color: #373867;
+  color: white;
+}
+
+.blockgrey {
+  background-color: #d9d9d9;
+  color: black;
+}
+
+.blockgreen {
+  background-color: #aace9b;
+  color: white;
+}
+
+h1, .contactheading, .aside a, .history h2 {
+  text-transform: uppercase;
+}
+
+body {
+  font-family: 'Roboto', Arial, serif;
+}
+
+/*--------- HEADER SECTION ----------*/
+.header {
+  height: 100px;
+}
+
+.hamburguer {
+  width: 50px;
+  height: 50px;
+  padding: 13px;
+  margin: 11px 5px;
+}
+
+.megalogo {
+  float: right;
+  width: 240px;
+  height: 50px;
+  padding: 10px;
+  margin: 10px 20px;
+}
+
+/*---------- ASIDE SECTION ----------*/
+.aside {
+  color: #fff;
+  background-color: #e5f2e2;
+  text-align: center;
+  width: 350px;
+  padding: 15px;
+  margin: 15px;
+}
+
+.aside nav ul li {
+  border: 1px #000 solid;
+  font-size: 23px;
+  padding: 10px 3px;
+  margin: 8px 43px;
+  width: 180px;
+  list-style: none;
+  background-color: #49a37b;
+  text-align: center;
+}
+
+.aside a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.menuheading {
+  color: #000;
+  font-size: 35px;
+}
+
+.sidebarblock {
+  border: 1px #000 solid;
+  overflow: hidden;
+  height: 360px;
+  background-color: #49a37b;
+}
+
+.aside img {
+  float: left;
+  width: 70px;
+  height: 70px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 35px;
+  box-sizing: border-box;
+}
+
+.sidebarblock ul{
+  float: right;
+  width: 200px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.sidebarblock li {
+  margin-bottom: 70px;
+  margin-top: 20px;
+  margin-right: 30px;
+}
+
+.aside nav ul li a:hover{
+  color: #373867;
+  margin-left: 3px;
+  transition: 0.4s;
+}
+
+/*---------- MAIN SECTION ----------*/
+.main {
+  overflow: hidden;
+  height: 300px;
+}
+
+h1{
+  font-size: 40px;
+  margin: 8px 20px;
+  padding: 8px 20px;
+  font-family: 'Mulish', Arial, serif;
+}
+
+.main h2{
+  display: inline-block;
+  margin: 8px 20px;
+  padding: 8px 20px;
+  width: 500px;
+}
+
+.main p {
+  float: left;
+  width: 900px;
+  margin: 5px 20px;
+  padding: 5px 20px;
+  box-sizing: border-box;
+}
+
+.gymbro {
+  float: right;
+  height: 200px;
+  width: 200px;
+  margin-right: 350px;
+  box-sizing: border-box;
+}
+
+/*---------- SERVICES SECTION --------*/
+.services {
+  overflow: hidden;
+  height: 600px;
+}
+
+.services h2{
+  padding: 8px;
+  margin-left: 100px;
+  margin-right: 250px;
+  text-align: center;
+  border: 1px #000 solid;
+  border-radius: 8px;
+  background-color: #88a47c;
+}
+
+.services img {
+  float: left;
+  width: 75px;
+  height: 75px;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+
+.services p {
+  font-size: 24px;
+  margin: 10px;
+  margin-left: 50px;
+  margin-right: 110px;
+  padding: 10px;
+  padding-left: 40px;
+  padding-right: 100px;
+}
+
+.first {
+  float: left;
+  width: 50%;
+  padding: 40px;
+  height: 270px;
+  box-sizing: border-box;
+}
+
+.second {
+  float: right;
+  width: 50%;
+  padding: 40px;
+  height: 270px;
+  box-sizing: border-box;
+}
+
+.suggestions p {
+  padding: 10px 10px 20px 40px;
+}
+
+/*---------- Q&A SECTION ------------*/
+.form {
+  overflow: hidden;
+}
+
+.form h2{
+  text-align: center;
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+
+.myform-1 input, .myform-1 select{
+  padding: 5px;
+  margin: 20px 20px 20px 50px;
+  float: left;
+  width: 37%;
+  box-sizing: border-box;
+}
+
+.myform-2 {
+  float: right;
+  width: 50%;
+  padding: 5px;
+  margin: 5px;
+  box-sizing: border-box;
+}
+
+.myform-2 textarea {
+  width: 620px;
+  height: 250px;
+  margin: 8px;
+}
+
+.form ::placeholder, option, select {
+  color: #49a37b;
+}
+
+.form textarea::placeholder{
+  font-size: 17px;
+}
+
+.myform-2 button {
+  font-size: 20px;
+  padding: 0 20px 5px 20px;
+  margin: 0 80px;
+  width: 160px;
+  height: 40px;
+  background-color: #49a37b;
+  border-radius: 12px;
+  border: #000 2px solid;
+}
+
+.myform-2 button img {
+  width: 20px;
+  height: 20px;
+}
+
+/*---------- HISTORY SECTION --------*/
+.history h2{
+  font-size: 40px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.history p {
+  font-size: 35px;
+  padding: 10px 20px;
+  margin: 10px 20px;
+  text-align: justify;
+}
+
+/*-------- MEMBERSHIPS SECTION --------*/
+.memberships {
+  overflow: hidden;
+}
+
+.activitiesboxes {
+  float: left;
+  width: 25%;
+  padding: 15px;
+  box-sizing: border-box;
+}
+
+/*------------ FOOTER SECTION --------*/
+.footer {
+  overflow: hidden;
+}
+
+.footer p{
+  color: #000;
+  font-size: 30px;
+  float: left;
+  margin-left: 30px;
+}
+
+.footer img {
+  float: right;
+  width: 50px;
+  height: 50px;
+  padding: 20px;
+  margin: 10px;
+}

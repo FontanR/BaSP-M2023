@@ -1,0 +1,202 @@
+aside {
+    display: none;
+}
+
+body {
+    font-family: 'Roboto', Arial, serif;
+}
+
+footer {
+    text-align: center;
+}
+
+/*--------- GLOBAL SECTION ----------*/
+.block-blue {
+    background-color: #373867;
+    color: white;
+}
+  
+.block-grey {
+    background-color: #d9d9d9;
+    color: black;
+}
+  
+.block-green {
+    background-color: #aace9b;
+    color: white;
+}
+
+h1, .contact-heading, .aside a, .history h2 {
+    text-transform: uppercase;
+}
+
+/*--------- HEADER SECTION ----------*/
+.hamburguer {
+    width: 30px;
+    height: 30px;
+}
+
+.megalogo {
+    width: 150px;
+    height: 30px;
+    text-align: center;
+}
+
+/*---------- MAIN SECTION ----------*/
+.main {
+    text-align: center;
+}
+
+.main p {
+    padding: 10px;
+    margin: 10px;
+}
+
+.main h2 {
+    font-size: 27px;
+    
+}
+.main h1{
+    font-size: 35px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.gymbro {
+    width: 150px;
+    height: 150px;
+}
+
+/*---------- SERVICES SECTION --------*/
+.first, .second {
+    text-align: center;
+}
+
+.services img {
+    width: 80px;
+    height: 80px;
+}
+
+.services h2{
+    border: 1px #000 solid;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #88a47c;
+    width:fit-content;
+}
+.services p{
+    display: none;
+}
+
+/*---------- FORM SECTION ------------*/
+.form h2{
+    text-align: center;
+    font-size: 2em;
+    letter-spacing: 3px;
+}
+
+.form-1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-1 input, .form-1 select, .form-1 option{
+    padding: 5px;
+    margin: 10px 25px;
+}
+
+.form-2 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.form-2 textarea{
+    width: 440px;
+    height: 130px;
+    margin: 20px;
+}
+
+.form-2 button {
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #49a37b;
+    border-radius: 12px;
+    border: #000 2px solid;
+}
+
+.form-2 button img {
+    width: 20px;
+    height: 20px;
+}
+
+.form ::placeholder, option, select {
+    color: #49a37b;
+}
+
+.form textarea::placeholder{
+    font-size: 17px;
+}
+
+/*---------- HISTORY SECTION --------*/
+.history {
+    text-align: center;
+}
+
+.history h2{
+    font-size: 2em;
+    padding: 10px 0 0 0;
+}
+  
+.history p {
+    padding: 10px;
+    margin: 10px;
+    font-size: 1.2em;
+    text-align: justify;
+}
+
+/*-------- MEMBERSHIPS SECTION --------*/
+/* .memberships {
+    text-align: center;
+} */
+
+.memberships h2 {
+    text-align: center;
+    font-size: 1.3em;
+    padding: 8px 5px 3px 5px;
+    margin: 8px 5px 3px 5px;
+}
+
+.activities-boxes ol li{
+    list-style-type: decimal;
+}
+
+.activities-boxes ul li{
+    list-style-type: circle;
+}
+
+.box-1 h2 {
+    font-size: 2em;
+}
+
+.box-1 li{
+    font-size: 1.1em;
+}
+
+/*------------ FOOTER SECTION --------*/
+.footer p{
+    color: #000;
+    padding: 5px;
+}
+  
+.footer img {
+    width: 30px;
+    height: 30px;
+    padding: 0 5px;
+    margin: 0 5px;
+}
+  
