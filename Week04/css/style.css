@@ -1,9 +1,23 @@
-aside {
-    display: none;
-}
-
 body {
     font-family: 'Roboto', Arial, serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    color: #fff;
+    background-color: #e5f2e2;
+    text-align: center;
+    width: 300px;
+    height: 100%;
 }
 
 footer {
@@ -30,16 +44,94 @@ h1, .contact-heading, .aside a, .history h2 {
     text-transform: uppercase;
 }
 
+.main h1, .main h2, .form h2, .history h2, .memberships h2 {
+    font-weight: bold;
+}
+
 /*--------- HEADER SECTION ----------*/
 .hamburguer {
     width: 30px;
     height: 30px;
+    margin: 10px;
 }
 
 .megalogo {
     width: 150px;
     height: 30px;
+    margin: 10px;
+}
+
+/*---------- ASIDE SECTION ----------*/
+.menu-heading {
+    color: #000;
+    font-size: 30px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.aside nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aside nav ul li {
+    border: 1px #000 solid;
+    background-color: #49a37b;
     text-align: center;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+}
+
+.aside a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.aside nav ul li a:hover{
+    color: #373867;
+    margin-left: 3px;
+    transition: 0.4s;
+}
+
+.sidebar-block h2 {
+    font-size: 20px;
+    padding: 5px 5px 10px 5px;
+    margin: 5px;
+}
+
+.sidebar-block {
+    border: 1px #000 solid;
+    border-radius: 12px;
+    height: 400px;
+    background-color: #49a37b;
+    padding: 20px;
+    margin: 20px;
+}
+
+.aside img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+.sidebar-container ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-container ul li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.sidebar-container ul li span {
+    width: 180px;
+    align-content: center;
 }
 
 /*---------- MAIN SECTION ----------*/
@@ -53,13 +145,13 @@ h1, .contact-heading, .aside a, .history h2 {
 }
 
 .main h2 {
-    font-size: 27px;
-    
+    font-size: 27px;  
 }
-.main h1{
+
+.main h1 {
     font-size: 35px;
     padding: 10px;
-    margin: 10px;
+    margin: 0;
 }
 
 .gymbro {
@@ -68,8 +160,16 @@ h1, .contact-heading, .aside a, .history h2 {
 }
 
 /*---------- SERVICES SECTION --------*/
+.services {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .first, .second {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .services img {
@@ -77,21 +177,25 @@ h1, .contact-heading, .aside a, .history h2 {
     height: 80px;
 }
 
-.services h2{
+.services h2 {
+    text-align: center;
     border: 1px #000 solid;
-    padding: 8px;
+    padding: 8px 20px;
+    margin: 5px 0;
     border-radius: 4px;
     background-color: #88a47c;
-    width:fit-content;
+    width: 180px;
 }
-.services p{
+
+.services p {
     display: none;
 }
 
 /*---------- FORM SECTION ------------*/
-.form h2{
+.form h2 {
     text-align: center;
     font-size: 2em;
+    padding: 5px;
     letter-spacing: 3px;
 }
 
@@ -100,7 +204,7 @@ h1, .contact-heading, .aside a, .history h2 {
     flex-direction: column;
 }
 
-.form-1 input, .form-1 select, .form-1 option{
+.form-1 input, .form-1 select, .form-1 option {
     padding: 5px;
     margin: 10px 25px;
 }
@@ -112,10 +216,11 @@ h1, .contact-heading, .aside a, .history h2 {
     align-items: center;
 }
 
-.form-2 textarea{
-    width: 440px;
+.form-2 textarea {
+    width: 100%;
     height: 130px;
-    margin: 20px;
+    padding: 5px;
+    margin: 20px 25px 10px 25px;
 }
 
 .form-2 button {
@@ -123,7 +228,7 @@ h1, .contact-heading, .aside a, .history h2 {
     justify-content: space-around;
     font-size: 20px;
     padding: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     background-color: #49a37b;
     border-radius: 12px;
     border: #000 2px solid;
@@ -138,7 +243,7 @@ h1, .contact-heading, .aside a, .history h2 {
     color: #49a37b;
 }
 
-.form textarea::placeholder{
+.form textarea::placeholder {
     font-size: 17px;
 }
 
@@ -149,54 +254,103 @@ h1, .contact-heading, .aside a, .history h2 {
 
 .history h2{
     font-size: 2em;
-    padding: 10px 0 0 0;
+    padding: 15px 0 0 0;
+    margin: 0;
 }
   
 .history p {
-    padding: 10px;
-    margin: 10px;
+    padding: 15px;
     font-size: 1.2em;
     text-align: justify;
 }
 
 /*-------- MEMBERSHIPS SECTION --------*/
-/* .memberships {
-    text-align: center;
-} */
 
 .memberships h2 {
     text-align: center;
     font-size: 1.3em;
-    padding: 8px 5px 3px 5px;
-    margin: 8px 5px 3px 5px;
+    padding: 8px 5px 8px 5px;
 }
 
-.activities-boxes ol li{
+.memberships ol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.memberships ol li {
     list-style-type: decimal;
+    padding: 3px 0;
+    width: 100px;
 }
 
-.activities-boxes ul li{
+.memberships ul {
+    margin: 0 15px;
+    padding: 4px 25px;
+}
+
+.activities-boxes ul li {
     list-style-type: circle;
+    padding: 3px 0;
 }
 
 .box-1 h2 {
-    font-size: 2em;
+    font-size: 1.8em;
 }
 
-.box-1 li{
+.box-1 li {
     font-size: 1.1em;
 }
 
 /*------------ FOOTER SECTION --------*/
-.footer p{
+.footer p {
     color: #000;
-    padding: 5px;
+    padding: 10px 5px;
 }
   
 .footer img {
     width: 30px;
     height: 30px;
-    padding: 0 5px;
+    padding: 0 5px 5px 5px;
     margin: 0 5px;
 }
-  
+
+/*------------ MEDIA SECTION --------*/
+/* margin-left: 300px; */
+
+@media screen and (min-width: 390px) {
+    .services {
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-grow: 1;
+        align-items: unset;
+    }
+    
+    .first, .second {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: unset;
+        width: 50%;
+        height: 50%;
+    }
+
+    .services h2 {
+        height: 25px;
+        align-self: center;
+        padding: 8px 3px 5px 3px;
+        margin: 5px;
+    }
+
+    .services p {
+        display: block;
+        padding: 0 10px;
+        margin: 0 10px;
+        width: 308px;
+        height: 120px;
+    }
+
+    .services img {
+        padding: 5px;
+    }
+
+}
