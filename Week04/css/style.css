@@ -15,7 +15,7 @@ aside {
     color: #fff;
     background-color: #e5f2e2;
     text-align: center;
-    width: 300px;
+    width: 350px;
     height: 100%;
 }
 
@@ -78,7 +78,7 @@ h1, .contact-heading, .aside a, .history h2 {
     border: 1px #000 solid;
     background-color: #49a37b;
     text-align: center;
-    width: 150px;
+    width: 180px;
     padding: 10px;
     margin: 10px;
     border-radius: 12px;
@@ -104,7 +104,7 @@ h1, .contact-heading, .aside a, .history h2 {
 .sidebar-block {
     border: 1px #000 solid;
     border-radius: 12px;
-    height: 400px;
+    height: 320px;
     background-color: #49a37b;
     padding: 20px;
     margin: 20px;
@@ -343,7 +343,6 @@ h1, .contact-heading, .aside a, .history h2 {
     .services {
         flex-direction: row;
         flex-wrap: wrap;
-        flex-grow: 1;
         align-items: unset;
     }
     
@@ -374,27 +373,48 @@ h1, .contact-heading, .aside a, .history h2 {
     .services img {
         padding: 5px;
     }
+
+    .form input, .form select, .form option, .form textarea {
+        max-width: 800px;
+    }
+
+    .history p {
+        padding: 15px 30px;
+    }
+
+    .memberships ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .memberships ul li {
+        padding: 3px 0;
+        width: 430px;
+    }
 }
 
 @media screen and (min-width: 1024px) {
     body {
-        margin-left: 300px;
+        margin-left: 350px;
     }
 
     aside {
         display: block;
     }
-
-    .sidebar-container ul {
-        display: flex;
-        flex-direction: column;
-    }
     
+    .aside nav ul li {
+        border-radius: 0;
+    }
+
+    .sidebar-block {
+        border-radius: 0;
+    }
+
     .sidebar-container ul li {
-        display: flex;
-        justify-content: space-around;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        padding: 5px;
         margin: 5px;
     }
     
