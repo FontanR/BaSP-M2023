@@ -12,7 +12,6 @@ aside {
     position: fixed;
     top: 0;
     left: 0;
-    overflow-x: hidden;
     color: #fff;
     background-color: #e5f2e2;
     text-align: center;
@@ -315,10 +314,32 @@ h1, .contact-heading, .aside a, .history h2 {
     margin: 0 5px;
 }
 
-/*------------ MEDIA SECTION --------*/
-/* margin-left: 300px; */
+/*---------- MEDIA SECTION ---------*/
+@media screen and (min-width: 600px) {
+    .main {
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+    }
 
-@media screen and (min-width: 390px) {
+    .main h1 {
+        padding: 15px;
+    }
+
+    .main h2 {
+        padding: 10px 15px;
+    }
+
+    .main p {
+        padding: 10px;
+        margin: 3px 10px;
+    }
+
+    .gymbro {
+        float: right;
+        align-self: flex-end;
+    }
+
     .services {
         flex-direction: row;
         flex-wrap: wrap;
@@ -343,14 +364,41 @@ h1, .contact-heading, .aside a, .history h2 {
 
     .services p {
         display: block;
-        padding: 0 10px;
+        padding: 5px 10px;
         margin: 0 10px;
         width: 308px;
         height: 120px;
+        line-height: 1.2em;
     }
 
     .services img {
         padding: 5px;
     }
+}
 
+@media screen and (min-width: 1024px) {
+    body {
+        margin-left: 300px;
+    }
+
+    aside {
+        display: block;
+    }
+
+    .sidebar-container ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .sidebar-container ul li {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px;
+        margin: 5px;
+    }
+    
+    .sidebar-container ul li span {
+        width: 170px;
+    }
 }
