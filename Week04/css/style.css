@@ -15,7 +15,7 @@ aside {
     color: #fff;
     background-color: #e5f2e2;
     text-align: center;
-    width: 350px;
+    width: 400px;
     height: 100%;
 }
 
@@ -79,6 +79,13 @@ h1, .contact-heading, .aside a, .history h2 {
     align-items: center;
 }
 
+.point {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #fff;
+}
+
 .aside nav ul li {
     border: 1px #000 solid;
     background-color: #49a37b;
@@ -91,6 +98,7 @@ h1, .contact-heading, .aside a, .history h2 {
 
 .aside a {
     text-decoration: none;
+    font-size: 20px;
     color: #fff;
 }
 
@@ -124,7 +132,6 @@ h1, .contact-heading, .aside a, .history h2 {
 .sidebar-container ul {
     display: flex;
     flex-direction: column;
-    list-style: circle;
 }
 
 .sidebar-container ul li {
@@ -168,7 +175,9 @@ h1, .contact-heading, .aside a, .history h2 {
 .services {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
+    height: 670px;
 }
 
 .first, .second {
@@ -178,12 +187,15 @@ h1, .contact-heading, .aside a, .history h2 {
 }
 
 .services img {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
 .services h2 {
     text-align: center;
+    align-self: center;
     border: 1px #000 solid;
     padding: 8px 20px;
     margin: 5px 0;
@@ -194,6 +206,13 @@ h1, .contact-heading, .aside a, .history h2 {
 
 .services p {
     display: none;
+    padding: 5px 10px 5px 0px;
+    margin: 0 10px 10px 0;
+    margin-left: 30%;
+    width: 308px;
+    height: 140px;
+    line-height: 1.2em;
+    font-size: 1.1em;
 }
 
 /*---------- FORM SECTION ------------*/
@@ -275,7 +294,7 @@ h1, .contact-heading, .aside a, .history h2 {
   
 .history p {
     padding: 15px;
-    font-size: 1.2em;
+    font-size: 1.3em;
     text-align: justify;
 }
 
@@ -364,6 +383,7 @@ h1, .contact-heading, .aside a, .history h2 {
     
     .first, .second {
         flex-direction: row;
+        justify-content: center;
         flex-wrap: wrap;
         align-items: unset;
         width: 50%;
@@ -379,11 +399,6 @@ h1, .contact-heading, .aside a, .history h2 {
 
     .services p {
         display: block;
-        padding: 5px 10px;
-        margin: 0 10px;
-        width: 308px;
-        height: 120px;
-        line-height: 1.2em;
     }
 
     .services img {
@@ -412,7 +427,7 @@ h1, .contact-heading, .aside a, .history h2 {
 
 @media screen and (min-width: 1024px) {
     body {
-        margin-left: 350px;
+        margin-left: 400px;
     }
 
     aside {
@@ -454,7 +469,8 @@ h1, .contact-heading, .aside a, .history h2 {
     
     .sidebar-container ul li span {
         width: 170px;
-    }
+        margin-right: 10px;
+    } 
 
     .gymbro {
         height: 180px;
