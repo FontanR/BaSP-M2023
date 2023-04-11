@@ -12,5 +12,11 @@ In this week we learned about css styles. If you want people to spend time on yo
 ### What did we develop?
 We continue with the index.html file but now we link a css stylesheet that will make the landing page of Megarocket looks similar to the one we did in figma 2 weeks ago. To achieve that we do not only code the css file but also had to modify the html file.
 
+## Week 04
+### What did we learn?
+This week we learned how to generate a responsive website with css using flexbox and media queries. Flexbox is used to place the components of the page and the media queries are used to change the propoerties of the components when the resolution settings are changed.
+### What did we develop?
+Now not only we want our page to be similar to the one designed in figma but we also want it to adapt depending on the device (phones, tablets or pc screen) we are using to see the page.
+
 ## Author
-~Rodrigo Fontan
+~Fontan Rodrigo
