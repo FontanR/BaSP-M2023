@@ -4,8 +4,6 @@
 to 0,5” y sino un alerta con el mensaje “Lower than 0,5”.*/
 
 var number = Math.random();
-console.log(number);
-
 if(number >= 0.5) {
     console.log('Greater than or equal to 0.5');
 }
@@ -33,7 +31,7 @@ else if(age >= 13 && age <= 19) {
     console.log('Adolescente');
 }
 else if(age >=20 && age <=30 ) {
-    console.log('Adult');
+    console.log('Adulto');
 }
 else if(age >=61 && age <= 75) {
     console.log('Adulto mayor');

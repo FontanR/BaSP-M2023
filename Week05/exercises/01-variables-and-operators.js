@@ -17,5 +17,4 @@ sentence = text1 + text2;
 
 // 3) Crear dos variables de tipo String y sumar el largo de cada variable (cantidad de letras del string) guardando el resultado de la suma en una 3er variable (utilizar length).
 
-
 sumCharacters = text1.length + text2.length;            // I used text1 and text2 from previous exercise
