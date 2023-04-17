@@ -18,5 +18,12 @@ This week we learned how to generate a responsive website with css using flexbox
 ### What did we develop?
 Now not only we want our page to be similar to the one designed in figma but we also want it to adapt depending on the device (phones, tablets or pc screen) we are using to see the page.
 
+# Week 05
+## What did we learn?
+This week we learned the basics of JavaScript programming. The concepts covered were variables and operators, strings, arrays, if else, for loops and functions.
+
+## What did we develop?
+We had to develop a series of exercises using the concepts learned during the week. These exercises were arranged in 6 different blocks so we developed 6 js files indexed to an empty html.
+
 ## Author
 ~Fontan Rodrigo
