@@ -3,7 +3,7 @@
 1) Crear un array que contenga 5 palabras y recorrer dicho array utilizando un bucle for de JavaScript para mostrar una alerta utilizando cada una de las palabras.*/
 
 var array = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday'];
-for(var i = 0; i <= array.length; i++) {
+for(var i = 0; i < array.length; i++) {
     console.log(array[i]);
 }
 
