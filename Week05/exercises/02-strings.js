@@ -30,9 +30,9 @@ console.log('Ejercicio: 2) d)');
 var firstLetter, restOfLyric, lyricsLower;
 var anotherLyrics = 'You only get one shot, do not MISS your chance to blow. This opportunity COMES once in a lifetime!';
 
-var anotherLyricsLower = anotherLyrics.toLocaleLowerCase();
+var anotherLyricsLower = anotherLyrics.toLowerCase();
 firstLetter = anotherLyricsLower.substring(0,1);
-firstLetter = firstLetter.toLocaleUpperCase();
+firstLetter = firstLetter.toUpperCase();
 restOfLyric = anotherLyricsLower.substring(1);
 
 console.log(firstLetter + restOfLyric);
@@ -58,7 +58,7 @@ lastBlank = sentenceLower.lastIndexOf(' ');
 
 firstWord = sentenceLower.substring(0, firstBlank);
 secondWord = sentenceLower.substring(lastBlank + 1);
-textBetween = sentenceLower.substring(firstBlank, lastBlank)
+textBetween = sentenceLower.substring(firstBlank, lastBlank + 1)
 
 firstWordUpper = firstWord.substring(0,1).toLocaleUpperCase() + firstWord.substring(1);
 secondWordUpper = secondWord.substring(0,1).toLocaleUpperCase() + secondWord.substring(1);
