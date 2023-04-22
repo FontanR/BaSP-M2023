@@ -69,6 +69,10 @@ label {
     margin: 0 10px;
 }
 
+.form-right p {
+    margin: 5px 0 15px 10px;
+}
+
 .form-right img {
     height: 36px;
     padding: 1px 0;
