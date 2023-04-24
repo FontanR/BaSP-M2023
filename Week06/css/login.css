@@ -12,6 +12,15 @@ h1 {
     margin: 5px 0 15px 0;
 }
 
+button {
+    color: azure;
+    background-color: #aace9b;
+    margin: 20px;
+    border-radius: 3px;
+    padding: 5px 25px;
+    border: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -19,6 +28,10 @@ h1 {
     max-width: 500px;
     margin: 30px;
     background-color: white;
+}
+
+.container a {
+    width: 75px;
 }
 
 .container img {
@@ -48,7 +61,8 @@ h1 {
     border-bottom: 2px solid #aace9b;
 }
 
-.mail-input, .password-input {
+.mail-input,
+.password-input {
     margin: 10px;
 }
 
@@ -60,11 +74,10 @@ input[type=checkbox] {
     margin: 5px 0;
 }
 
-.container input[type=submit] {
-    color: azure;
-    background-color: #aace9b;
-    margin: 20px;
-    border-radius: 3px;
-    padding: 5px 25px;
-    border: none;
+.valid {
+    border: 1px solid green;
+}
+
+.not-valid {
+    border: 1px solid red;
 }

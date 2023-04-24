@@ -1,6 +1,6 @@
-// **************  VALIDACIONES  ********************
+// **************  VALIDATIONS  ********************
 var email = document.getElementById('email');
-email.addEventListener('keyup', isEmail)
+email.addEventListener('keyup', isEmail);
 
 function isEmail(e) {
     var text = e.target.value;
@@ -23,11 +23,11 @@ function haveInteger(string) {
 }
 
 var password = document.getElementById('password');
-password.addEventListener('keyup', isPassword)
+password.addEventListener('keyup', isPassword);
 
 function isPassword(e) {
     var text = e.target.value;
-    if (text.length >= 8 && text.toUpperCase() != text.toLowerCase() && haveInteger(text)) {
+    if (text.indexOf(' ') == -1 && text.toUpperCase() != text.toLowerCase() && haveInteger(text) && text.length >= 8) {
         return console.log(true);
     } else {
         return console.log(false);

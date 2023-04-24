@@ -22,6 +22,22 @@ label {
     color: #aace9b;
 }
 
+input {
+    height: 20px;
+    margin: 10px;
+    border: none;
+    background-color: #e5e5e5;
+}
+
+button {
+    color: azure;
+    background-color: #aace9b;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    padding: 5px 25px;
+    border: none;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -29,6 +45,10 @@ label {
     max-width: 650px;
     margin: 30px 30px 20px 30px;
     background-color: white;
+}
+
+.container a {
+    width: 75px;
 }
 
 .container img {
@@ -58,14 +78,8 @@ label {
     margin: 0 15px;
 }
 
-.form-left input, .form-right input {
-    height: 20px;
-    margin: 10px;
-    border: none;
-    background-color: #e5e5e5;
-}
-
-.form-left label, .form-right label {
+.form-left label,
+.form-right label {
     margin: 0 10px;
 }
 
@@ -79,13 +93,12 @@ label {
     margin: 10px;
 }
 
-main input[type=submit] {
-    color: azure;
-    background-color: #aace9b;
-    margin-bottom: 10px;
-    border-radius: 3px;
-    padding: 5px 25px;
-    border: none;
+.valid {
+    border: 1px solid green;
+}
+
+.not-valid {
+    border: 1px solid red;
 }
 
 @media screen and (min-width: 600px) {
