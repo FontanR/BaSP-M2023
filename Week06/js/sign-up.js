@@ -1,5 +1,5 @@
 // **************  VALIDATE NUMBERS  ********************
-function haveInteger(string) {
+function hasInteger(string) {
     var chars = [];
     for (var i = 0; i < string.length; i++) {
         chars.push(parseInt(string[i]));
@@ -13,30 +13,93 @@ function haveInteger(string) {
 }
 // **************  NAME  ********************
 var firstName = document.getElementById('name');
-firstName.addEventListener('keyup', isText);
+firstName.addEventListener('keyup', isName);
 
-function isText(e) {
+function isName(e) {
     var text = e.target.value;
-    if (!haveInteger(text) && text.length > 3) {
+    if (!hasInteger(text) && text.length > 3) {
         firstName.onblur = function () {
             firstName.classList.remove('not-valid');
             firstName.classList.add('valid');
         }
     } else {
+        var labelAlert;
         firstName.onblur = function () {
             firstName.classList.remove('valid');
             firstName.classList.add('not-valid');
+            labelAlert = document.createElement('span');
+            labelAlert.className = 'alert';
+            var textAlert = document.createTextNode('This input must have only letters and at least 3 digits');
+            labelAlert.appendChild(textAlert);
+            firstName.insertAdjacentElement('afterend', labelAlert);
+        }
+        firstName.onfocus = function () {
+            firstName.classList.remove('valid', 'not-valid');
+            labelAlert.remove();
+        }
+    }
+}
+// **************  LASTNAME ********************
+var lastName = document.getElementById('last-name');
+lastName.addEventListener('keyup', isLastName);
+
+function isLastName(e) {
+    var text = e.target.value;
+    if (!hasInteger(text) && text.length > 3) {
+        lastName.onblur = function () {
+            lastName.classList.remove('not-valid');
+            lastName.classList.add('valid');
+        }
+    } else {
+        var labelAlert;
+        lastName.onblur = function () {
+            lastName.classList.remove('valid');
+            lastName.classList.add('not-valid');
+            labelAlert = document.createElement('span');
+            labelAlert.className = 'alert';
+            var textAlert = document.createTextNode('This input must have only letters and at least 3 digits');
+            labelAlert.appendChild(textAlert);
+            lastName.insertAdjacentElement('afterend', labelAlert);
+        }
+        lastName.onfocus = function () {
+            lastName.classList.remove('valid', 'not-valid');
+            labelAlert.remove();
+        }
+    }
+}
+// **************  EMAIL  ********************
+var email = document.getElementById('email');
+email.addEventListener('keyup', isEmail);
+
+function isEmail(e) {
+    var text = e.target.value;
+    var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+    var result = emailExpression.test(text);
+    if (result) {
+        email.onblur = function () {
+            email.classList.remove('not-valid');
+            email.classList.add('valid');
+        }
+    } else {
+        var labelAlert;
+        email.onblur = function () {
+            email.classList.remove('valid');
+            email.classList.add('not-valid');
+            labelAlert = document.createElement('span');
+            labelAlert.className = 'alert';
+            var textAlert = document.createTextNode('This input must be an email.');
+            labelAlert.appendChild(textAlert);
+            email.insertAdjacentElement('afterend', labelAlert);
+        }
+        email.onfocus = function () {
+            email.classList.remove('valid', 'not-valid');
+            labelAlert.remove();
         }
     }
 }
 
-firstName.onfocus = function () {
-    firstName.classList.remove('valid', 'not-valid');
-}
+// **************  BIRTH  ********************  Con formato dd/mm/aaaa.
 
-// **************  FIRST NAME ********************
-var lastName = document.getElementById('last-name');
-lastName.addEventListener('keyup', isText);
 // **************  DNI  ********************
 var dni = document.getElementById('dni');
 dni.addEventListener('keyup', isDNI);
@@ -44,13 +107,27 @@ dni.addEventListener('keyup', isDNI);
 function isDNI(e) {
     var text = e.target.value;
     if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && text.length >= 7) {
-        return console.log(true);
+        dni.onblur = function () {
+            dni.classList.remove('not-valid');
+            dni.classList.add('valid');
+        }
     } else {
-        return console.log(false);
+        var labelAlert;
+        dni.onblur = function () {
+            dni.classList.remove('valid');
+            dni.classList.add('not-valid');
+            labelAlert = document.createElement('span');
+            labelAlert.className = 'alert';
+            var textAlert = document.createTextNode('This input must have at least 7 numbers.');
+            labelAlert.appendChild(textAlert);
+            dni.insertAdjacentElement('afterend', labelAlert);
+        }
+        dni.onfocus = function () {
+            dni.classList.remove('valid', 'not-valid');
+            labelAlert.remove();
+        }
     }
 }
-// **************  BIRTH  ********************  Con formato dd/mm/aaaa.
-
 // **************  PHONE  ********************
 var phone = document.getElementById('phone');
 phone.addEventListener('keyup', isPhone);
@@ -58,9 +135,25 @@ phone.addEventListener('keyup', isPhone);
 function isPhone(e) {
     var text = e.target.value;
     if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && text.length >= 10) {
-        return console.log(true);
+        phone.onblur = function () {
+            phone.classList.remove('not-valid');
+            phone.classList.add('valid');
+        }
     } else {
-        return console.log(false);
+        var labelAlert;
+        phone.onblur = function () {
+            phone.classList.remove('valid');
+            phone.classList.add('not-valid');
+            labelAlert = document.createElement('span');
+            labelAlert.className = 'alert';
+            var textAlert = document.createTextNode('This input must be a phone number.');
+            labelAlert.appendChild(textAlert);
+            phone.insertAdjacentElement('afterend', labelAlert);
+        }
+        phone.onfocus = function () {
+            phone.classList.remove('valid', 'not-valid');
+            labelAlert.remove();
+        }
     }
 }
 // **************  ADRESS ********************
@@ -69,7 +162,7 @@ address.addEventListener('keyup', isAddress);
 
 function isAddress(e) {
     var text = e.target.value;
-    if (text.indexOf(' ') > 3 && text.toUpperCase() != text.toLowerCase() && haveInteger(text) && text.length >= 5) {
+    if (text.indexOf(' ') > 3 && text.toUpperCase() != text.toLowerCase() && hasInteger(text) && text.length >= 5) {
         return console.log(true);
     } else {
         return console.log(false);
@@ -99,16 +192,6 @@ function isZipCode(e) {
         return console.log(false);
     }
 }
-// **************  EMAIL  ********************
-var email = document.getElementById('email');
-email.addEventListener('keyup', isEmail);
-
-function isEmail(e) {
-    var text = e.target.value;
-    var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-    var result = emailExpression.test(text);
-    return console.log(result);
-}
 // **************  PASS  ********************
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
@@ -116,7 +199,7 @@ password.addEventListener('keyup', isPassword);
 var savedPassword = '';
 function isPassword(e) {
     var textPassword = e.target.value;
-    if (textPassword.indexOf(' ') == -1 && textPassword.toUpperCase() != textPassword.toLowerCase() && haveInteger(textPassword) && textPassword.length >= 8) {
+    if (textPassword.indexOf(' ') == -1 && textPassword.toUpperCase() != textPassword.toLowerCase() && hasInteger(textPassword) && textPassword.length >= 8) {
         savedPassword = textPassword;
         return console.log(true);
     } else {
