@@ -18,12 +18,17 @@ This week we learned how to generate a responsive website with css using flexbox
 ### What did we develop?
 Now not only we want our page to be similar to the one designed in figma but we also want it to adapt depending on the device (phones, tablets or pc screen) we are using to see the page.
 
-# Week 05
-## What did we learn?
+## Week 05
+### What did we learn?
 This week we learned the basics of JavaScript programming. The concepts covered were variables and operators, strings, arrays, if else, for loops and functions.
-
-## What did we develop?
+### What did we develop?
 We had to develop a series of exercises using the concepts learned during the week. These exercises were arranged in 6 different blocks so we developed 6 js files indexed to an empty html.
+
+## Week 06
+### What did we learn?
+This time we learned how to use and manipulate the DOM with javascript. This is very interesting since it integrates all the contents seen in the previous weeks. Using javascript we are now able to modify the html in conjunction with the css making our page interactive with the user.
+### What did we develop?
+We continue with the design of the megarocket website. Now we added the login and sign up pages (we made the html and css of both) and we also added the validations for the inputs of the different fields using javascript. With this we added visual effects to indicate if the information requested in the fields complied with the validations or not.
 
 ## Author
 ~Fontan Rodrigo

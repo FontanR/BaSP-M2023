@@ -22,8 +22,7 @@ function hasSymbol(string) {
     }
     return false;
 }
-
-// **************  EMAIL  ********************   Debe tener un formato de email válido.
+// **************  EMAIL  ********************
 var email = document.getElementById('email');
 email.addEventListener('keyup', isEmail);
 var savedEmail;
@@ -37,7 +36,6 @@ function isEmail(e) {
             email.classList.remove('not-valid');
             email.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         email.onblur = function () {
@@ -53,23 +51,21 @@ function isEmail(e) {
             email.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  PASS  ********************   Al menos 8 caracteres, formados por letras (una mayus) y números. Y sin espacios.
+// **************  PASS  ********************
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
 var savedPassword;
 function isPassword(e) {
     var textPassword = e.target.value;
     if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
-        textPassword.toUpperCase() != textPassword.toLowerCase() && hasInteger(textPassword) && textPassword.length >= 8) {
+        hasInteger(textPassword) && text.toUpperCase() != text.toLowerCase() && textPassword.length >= 8) {
         savedPassword = textPassword;
         password.onblur = function () {
             password.classList.remove('not-valid');
             password.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         password.onblur = function () {
@@ -85,7 +81,6 @@ function isPassword(e) {
             password.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
 // **************  LOGIN BUTTON  ********************

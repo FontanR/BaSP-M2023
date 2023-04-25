@@ -22,7 +22,7 @@ function hasSymbol(string) {
     }
     return false;
 }
-// **********  NAME  ***********   Solo letras y debe tener más de 3 letras y una mayus.
+// **********  NAME  ***********
 var firstName = document.getElementById('name');
 firstName.addEventListener('keyup', isName);
 var savedName;
@@ -35,7 +35,6 @@ function isName(e) {
             firstName.classList.remove('not-valid');
             firstName.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         firstName.onblur = function () {
@@ -51,10 +50,9 @@ function isName(e) {
             firstName.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **********  LASTNAME ************   Solo letras y debe tener más de 3 letras y una mayus.
+// **********  LASTNAME  ************
 var lastName = document.getElementById('last-name');
 lastName.addEventListener('keyup', isLastName);
 var savedLastName;
@@ -67,7 +65,6 @@ function isLastName(e) {
             lastName.classList.remove('not-valid');
             lastName.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         lastName.onblur = function () {
@@ -83,10 +80,9 @@ function isLastName(e) {
             lastName.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  EMAIL  ********************   Debe tener un formato de email válido.
+// **************  EMAIL  ********************
 var email = document.getElementById('email');
 email.addEventListener('keyup', isEmail);
 var savedEmail;
@@ -101,7 +97,6 @@ function isEmail(e) {
             email.classList.remove('not-valid');
             email.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         email.onblur = function () {
@@ -117,23 +112,21 @@ function isEmail(e) {
             email.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  BIRTH  ********************  Con formato dd/mm/aaaa.
+// **************  BIRTH  ********************
 var date = document.getElementById('birth');
 date.addEventListener('change', isDate);
 var savedDate;
 
 function isDate() {
     var text = document.getElementById('birth').value;
-    if (text.substring(0, 4) < 2010) {
+    if (text.substring(0, 4) <= 2010) {
         savedDate = text;
         date.onblur = function () {
             date.classList.remove('not-valid');
             date.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         date.onblur = function () {
@@ -149,11 +142,9 @@ function isDate() {
             date.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-
-// **************  DNI  ********************    Solo números y debe tener 7 números. SIN ESPACIOS
+// **************  DNI  ********************
 var dni = document.getElementById('dni');
 dni.addEventListener('keyup', isDNI);
 var savedDni;
@@ -166,7 +157,6 @@ function isDNI(e) {
             dni.classList.remove('not-valid');
             dni.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         dni.onblur = function () {
@@ -182,10 +172,9 @@ function isDNI(e) {
             dni.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  PHONE  ********************    Solo números y debe tener 10 números. SIN ESPACIOS
+// **************  PHONE  ********************
 var phone = document.getElementById('phone');
 phone.addEventListener('keyup', isPhone);
 var savedPhone;
@@ -198,7 +187,6 @@ function isPhone(e) {
             phone.classList.remove('not-valid');
             phone.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         phone.onblur = function () {
@@ -214,11 +202,9 @@ function isPhone(e) {
             phone.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  ADRESS ********************   Al menos 5 caracteres con letras, números y si hay un espacio no puede estar ni en las primeras 3 posiciones ni en las ultimas 3.
-
+// **************  ADRESS  ********************
 var address = document.getElementById('address');
 address.addEventListener('keyup', isAddress);
 var savedAddress;
@@ -231,7 +217,6 @@ function isAddress(e) {
             address.classList.remove('not-valid');
             address.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         address.onblur = function () {
@@ -247,23 +232,21 @@ function isAddress(e) {
             address.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  CITY  ********************   Texto alfanumérico y debe tener más de 3 letras y una mayus.
+// **************  CITY  ********************
 var city = document.getElementById('city');
 city.addEventListener('keyup', isCity);
 var savedCity;
 
 function isCity(e) {
     var text = e.target.value;
-    if (text != text.toLowerCase() && !hasSymbol(text) && text.length - 3) {
+    if (text != text.toLowerCase() && !hasSymbol(text) && text.length > 3) {
         savedCity = text;
         city.onblur = function () {
             city.classList.remove('not-valid');
             city.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         city.onblur = function () {
@@ -279,10 +262,9 @@ function isCity(e) {
             city.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  ZIP CODE  ********************   Solo números y debe tener entre 4 y 5 números.
+// **************  ZIP CODE  ********************
 var zipCode = document.getElementById('zip-code');
 zipCode.addEventListener('keyup', isZipCode);
 var savedZipCode;
@@ -295,7 +277,6 @@ function isZipCode(e) {
             zipCode.classList.remove('not-valid');
             zipCode.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         zipCode.onblur = function () {
@@ -311,10 +292,9 @@ function isZipCode(e) {
             zipCode.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
-// **************  PASS  ********************   Al menos 8 caracteres, formados por letras (una mayus) y números. Y sin espacios.
+// **************  PASS  ********************
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
 var savedPassword;
@@ -322,13 +302,12 @@ var savedPassword;
 function isPassword(e) {
     var textPassword = e.target.value;
     if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
-        textPassword.toUpperCase() != textPassword.toLowerCase() && hasInteger(textPassword) && textPassword.length >= 8) {
+        hasInteger(textPassword) && text.toUpperCase() != text.toLowerCase() && textPassword.length >= 8) {
         savedPassword = textPassword;
         password.onblur = function () {
             password.classList.remove('not-valid');
             password.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         password.onblur = function () {
@@ -336,7 +315,7 @@ function isPassword(e) {
             password.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('This input must have at least 8 characters with at least 1 upper case letter, 1 number and 1 symbol.');
+            var textAlert = document.createTextNode('This input must have at least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
             labelAlert.appendChild(textAlert);
             password.insertAdjacentElement('afterend', labelAlert);
         }
@@ -344,7 +323,6 @@ function isPassword(e) {
             password.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
 // **************  REPEAT PASS  ********************
@@ -358,7 +336,6 @@ function isTheSamePassword(e) {
             repeatPassword.classList.remove('not-valid');
             repeatPassword.classList.add('valid');
         }
-        return true;
     } else {
         var labelAlert;
         repeatPassword.onblur = function () {
@@ -374,7 +351,6 @@ function isTheSamePassword(e) {
             repeatPassword.classList.remove('valid', 'not-valid');
             labelAlert.remove();
         }
-        return false;
     }
 }
 // **************  REGISTER BUTTON  ********************
