@@ -29,6 +29,12 @@ input {
     background-color: #e5e5e5;
 }
 
+form div div {
+    display: flex;
+    flex-direction: column;
+    height: 90px;
+}
+
 button {
     color: azure;
     background-color: #aace9b;
@@ -104,6 +110,7 @@ button {
 .alert {
     margin: 0 0 5px 10px;
     color: red;
+    font-size: 0.8em;
 }
 
 @media screen and (min-width: 600px) {

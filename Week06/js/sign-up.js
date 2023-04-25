@@ -302,7 +302,7 @@ var savedPassword;
 function isPassword(e) {
     var textPassword = e.target.value;
     if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
-        hasInteger(textPassword) && text.toUpperCase() != text.toLowerCase() && textPassword.length >= 8) {
+        textPassword != textPassword.toUpperCase() && hasInteger(textPassword) && textPassword.length >= 8) {
         savedPassword = textPassword;
         password.onblur = function () {
             password.classList.remove('not-valid');
@@ -315,7 +315,7 @@ function isPassword(e) {
             password.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('This input must have at least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
+            var textAlert = document.createTextNode('At least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
             labelAlert.appendChild(textAlert);
             password.insertAdjacentElement('afterend', labelAlert);
         }

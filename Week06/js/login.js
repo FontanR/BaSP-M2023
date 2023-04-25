@@ -26,6 +26,7 @@ function hasSymbol(string) {
 var email = document.getElementById('email');
 email.addEventListener('keyup', isEmail);
 var savedEmail;
+
 function isEmail(e) {
     var text = e.target.value;
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -43,9 +44,10 @@ function isEmail(e) {
             email.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('This input must be an email.');
+            var textAlert = document.createTextNode('The email is incorrect.');
             labelAlert.appendChild(textAlert);
-            email.insertAdjacentElement('afterend', labelAlert);
+            var form = document.getElementById('form');
+            form.insertAdjacentElement('afterend', labelAlert);
         }
         email.onfocus = function () {
             email.classList.remove('valid', 'not-valid');
@@ -57,10 +59,11 @@ function isEmail(e) {
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
 var savedPassword;
+
 function isPassword(e) {
     var textPassword = e.target.value;
     if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
-        hasInteger(textPassword) && text.toUpperCase() != text.toLowerCase() && textPassword.length >= 8) {
+        textPassword != textPassword.toUpperCase() && hasInteger(textPassword) && textPassword.length >= 8) {
         savedPassword = textPassword;
         password.onblur = function () {
             password.classList.remove('not-valid');
@@ -73,9 +76,10 @@ function isPassword(e) {
             password.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('This input must be your password.');
+            var textAlert = document.createTextNode('The password is incorrect');
             labelAlert.appendChild(textAlert);
-            password.insertAdjacentElement('afterend', labelAlert);
+            var form = document.getElementById('form');
+            form.insertAdjacentElement('afterend', labelAlert);
         }
         password.onfocus = function () {
             password.classList.remove('valid', 'not-valid');
