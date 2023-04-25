@@ -12,6 +12,11 @@ h1 {
     margin: 5px 0 15px 0;
 }
 
+input {
+    border: none;
+    border-bottom: 2px solid #aace9b;
+}
+
 button {
     color: azure;
     background-color: #aace9b;
@@ -56,11 +61,6 @@ button {
     width: 20px;
 }
 
-.bottom-box input {
-    border: none;
-    border-bottom: 2px solid #aace9b;
-}
-
 .mail-input,
 .password-input {
     margin: 10px;
@@ -80,4 +80,9 @@ input[type=checkbox] {
 
 .not-valid {
     border: 1px solid red;
+}
+
+.alert {
+    margin: 0 0 5px 10px;
+    color: red;
 }

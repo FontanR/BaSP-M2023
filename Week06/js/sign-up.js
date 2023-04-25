@@ -25,10 +25,12 @@ function hasSymbol(string) {
 // **********  NAME  ***********   Solo letras y debe tener más de 3 letras y una mayus.
 var firstName = document.getElementById('name');
 firstName.addEventListener('keyup', isName);
+var savedName;
 
 function isName(e) {
     var text = e.target.value;
     if (text != text.toLowerCase() && !hasInteger(text) && !hasSymbol(text) && text.length > 3) {
+        savedName = text;
         firstName.onblur = function () {
             firstName.classList.remove('not-valid');
             firstName.classList.add('valid');
@@ -55,10 +57,12 @@ function isName(e) {
 // **********  LASTNAME ************   Solo letras y debe tener más de 3 letras y una mayus.
 var lastName = document.getElementById('last-name');
 lastName.addEventListener('keyup', isLastName);
+var savedLastName;
 
 function isLastName(e) {
     var text = e.target.value;
     if (text != text.toLowerCase() && !hasInteger(text) && !hasSymbol(text) && text.length > 3) {
+        savedLastName = text;
         lastName.onblur = function () {
             lastName.classList.remove('not-valid');
             lastName.classList.add('valid');
@@ -85,12 +89,14 @@ function isLastName(e) {
 // **************  EMAIL  ********************   Debe tener un formato de email válido.
 var email = document.getElementById('email');
 email.addEventListener('keyup', isEmail);
+var savedEmail;
 
 function isEmail(e) {
     var text = e.target.value;
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
     var result = emailExpression.test(text);
     if (result) {
+        savedEmail = text;
         email.onblur = function () {
             email.classList.remove('not-valid');
             email.classList.add('valid');
@@ -115,14 +121,47 @@ function isEmail(e) {
     }
 }
 // **************  BIRTH  ********************  Con formato dd/mm/aaaa.
+var date = document.getElementById('birth');
+date.addEventListener('change', isDate);
+var savedDate;
+
+function isDate() {
+    var text = document.getElementById('birth').value;
+    if (text.substring(0, 4) < 2010) {
+        savedDate = text;
+        date.onblur = function () {
+            date.classList.remove('not-valid');
+            date.classList.add('valid');
+        }
+        return true;
+    } else {
+        var labelAlert;
+        date.onblur = function () {
+            date.classList.remove('valid');
+            date.classList.add('not-valid');
+            labelAlert = document.createElement('span');
+            labelAlert.className = 'alert';
+            var textAlert = document.createTextNode('You must be at least 13 years old.');
+            labelAlert.appendChild(textAlert);
+            date.insertAdjacentElement('afterend', labelAlert);
+        }
+        date.onfocus = function () {
+            date.classList.remove('valid', 'not-valid');
+            labelAlert.remove();
+        }
+        return false;
+    }
+}
 
 // **************  DNI  ********************    Solo números y debe tener 7 números. SIN ESPACIOS
 var dni = document.getElementById('dni');
 dni.addEventListener('keyup', isDNI);
+var savedDni;
 
 function isDNI(e) {
     var text = e.target.value;
     if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length >= 7) {
+        savedDni = text;
         dni.onblur = function () {
             dni.classList.remove('not-valid');
             dni.classList.add('valid');
@@ -149,10 +188,12 @@ function isDNI(e) {
 // **************  PHONE  ********************    Solo números y debe tener 10 números. SIN ESPACIOS
 var phone = document.getElementById('phone');
 phone.addEventListener('keyup', isPhone);
+var savedPhone;
 
 function isPhone(e) {
     var text = e.target.value;
     if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length >= 10) {
+        savedPhone = text;
         phone.onblur = function () {
             phone.classList.remove('not-valid');
             phone.classList.add('valid');
@@ -180,10 +221,12 @@ function isPhone(e) {
 
 var address = document.getElementById('address');
 address.addEventListener('keyup', isAddress);
+var savedAddress;
 
 function isAddress(e) {
     var text = e.target.value;
     if (text.indexOf(' ') >= 3 && text.lastIndexOf(' ') <= text.length - 3 && text.toUpperCase() != text.toLowerCase() && hasInteger(text) && text.length >= 5) {
+        savedAddress = text;
         address.onblur = function () {
             address.classList.remove('not-valid');
             address.classList.add('valid');
@@ -210,10 +253,12 @@ function isAddress(e) {
 // **************  CITY  ********************   Texto alfanumérico y debe tener más de 3 letras y una mayus.
 var city = document.getElementById('city');
 city.addEventListener('keyup', isCity);
+var savedCity;
 
 function isCity(e) {
     var text = e.target.value;
     if (text != text.toLowerCase() && !hasSymbol(text) && text.length - 3) {
+        savedCity = text;
         city.onblur = function () {
             city.classList.remove('not-valid');
             city.classList.add('valid');
@@ -240,10 +285,12 @@ function isCity(e) {
 // **************  ZIP CODE  ********************   Solo números y debe tener entre 4 y 5 números.
 var zipCode = document.getElementById('zip-code');
 zipCode.addEventListener('keyup', isZipCode);
+var savedZipCode;
 
 function isZipCode(e) {
     var text = e.target.value;
     if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length >= 4 && text.length <= 5) {
+        savedZipCode = text;
         zipCode.onblur = function () {
             zipCode.classList.remove('not-valid');
             zipCode.classList.add('valid');
@@ -270,8 +317,8 @@ function isZipCode(e) {
 // **************  PASS  ********************   Al menos 8 caracteres, formados por letras (una mayus) y números. Y sin espacios.
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
+var savedPassword;
 
-var savedPassword = '';
 function isPassword(e) {
     var textPassword = e.target.value;
     if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
@@ -328,5 +375,21 @@ function isTheSamePassword(e) {
             labelAlert.remove();
         }
         return false;
+    }
+}
+// **************  REGISTER BUTTON  ********************
+var registerBtn = document.getElementById('button');
+registerBtn.addEventListener('click', validateSubmit);
+
+function validateSubmit() {
+    if (email.classList.contains('not-valid') || password.classList.contains('not-valid') || firstName.classList.contains('not-valid') ||
+        lastName.classList.contains('not-valid') || dni.classList.contains('not-valid') || date.classList.contains('not-valid') ||
+        phone.classList.contains('not-valid') || zipCode.classList.contains('not-valid') || address.classList.contains('not-valid') ||
+        city.classList.contains('not-valid') || repeatPassword.classList.contains('not-valid')) {
+        alert('There are some inputs with incorrect information.');
+    } else {
+        alert('Your name is: ' + savedName + '\nYour lastname is: ' + savedLastName + '\nYour mail is: ' + savedEmail + '.\nYour date is: '
+            + savedDate + '\nYour dni is: ' + savedDni + '\nYour phone is: ' + savedPhone + '\nYour address is: ' + savedAddress
+            + '\nYour city is: ' + savedCity + '\nYour zip code is: ' + savedZipCode + '\nYour password is: ' + savedPassword);
     }
 }
