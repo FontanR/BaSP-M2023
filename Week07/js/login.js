@@ -92,25 +92,19 @@ var loginBtn = document.getElementById('button');
 loginBtn.addEventListener('click', validateSubmit);
 
 function validateSubmit() {
-    // if (email.classList.contains('not-valid') || password.classList.contains('not-valid')) {
-    //     alert('There are some inputs with incorrect information.');
-    // } else {
-    //     alert('Your mail is: ' + savedEmail + '.\nYour password is: ' + savedPassword);
-    // }
-    var url = 'https://api-rest-server.vercel.app/login?email=' + savedEmail + '&password=' + savedPassword;      //     password: BaSProfessional1
-
-    fetch(url)
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            alert(data.msg);
-        })
-        .catch(function () {
-            alert('ERROR: Server or route error.');
-        });
+    if (email.classList.contains('not-valid') || password.classList.contains('not-valid')) {
+        alert('There are some inputs with incorrect information.');
+    } else {
+        var url = 'https://api-rest-server.vercel.app/login?email=' + savedEmail + '&password=' + savedPassword;      //     password: BaSProfessional1
+        fetch(url)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                alert(data.msg);
+            })
+            .catch(function () {
+                alert('ERROR: Server or route error.');
+            });
+    }
 }
-
-
-
-

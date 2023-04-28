@@ -368,8 +368,41 @@ function validateSubmit() {
         city.classList.contains('not-valid') || repeatPassword.classList.contains('not-valid')) {
         alert('There are some inputs with incorrect information.');
     } else {
-        alert('Your name is: ' + savedName + '\nYour lastname is: ' + savedLastName + '\nYour mail is: ' + savedEmail + '.\nYour date is: '
-            + savedDate + '\nYour dni is: ' + savedDni + '\nYour phone is: ' + savedPhone + '\nYour address is: ' + savedAddress
-            + '\nYour city is: ' + savedCity + '\nYour zip code is: ' + savedZipCode + '\nYour password is: ' + savedPassword);
+        var url = 'https://api-rest-server.vercel.app/signup?name=' + savedName + '&lastName=' + savedLastName + '&dni=' +
+            savedDni + '&dob=' + savedDate + '&phone=' + savedPhone + '&address=' + savedAddress + '&city=' + savedCity + '&zip=' + savedZipCode +
+            '&email=' + savedEmail + '&password=' + savedPassword;
+
+        fetch(url)
+            .then(function (response) {                                                     //     password: BaSProfessional1
+                return response.json();
+            })
+            .then(function (data) {
+                // console.log(data);
+                // console.log(Object.getOwnPropertyNames(data.data));
+                // console.log(Object.values(data.data));
+                // console.log(data.hasOwnProperty('errors'));
+                // console.log(data.errors);
+                if (data.hasOwnProperty('data')) {
+                    var keys = Object.keys(data.data);
+                    for (var i = 1; i < keys.length; i++) {
+                        var key = keys[i];
+                        if (data.data.hasOwnProperty(key)) {
+                            var value = data.data[key];
+                            localStorage.setItem(key, value);
+                            console.log(key + ': ' + value);
+                        }
+                    }
+                } else if (data.hasOwnProperty('errors')) {
+                    for (var i = 0; i < data.errors.length; i++) {
+                        var error = data.errors[i];
+                        if (error.hasOwnProperty('msg')) {
+                            console.log(error.msg);
+                        }
+                    }
+                }
+            })
+            .catch(function () {
+                alert('ERROR: Server or route error.');
+            });
     }
 }
