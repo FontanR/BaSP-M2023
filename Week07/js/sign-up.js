@@ -114,7 +114,7 @@ function isEmail(e) {
         }
     }
 }
-// **************  BIRTH  ********************
+// **************  DATE  ********************
 var date = document.getElementById('birth');
 date.addEventListener('change', isDate);
 var savedDate;
@@ -360,6 +360,7 @@ function isTheSamePassword(e) {
 // **************  REGISTER BUTTON  ********************
 var registerBtn = document.getElementById('button');
 registerBtn.addEventListener('click', validateSubmit);
+var local = localStorage;
 
 function validateSubmit() {
     if (email.classList.contains('not-valid') || password.classList.contains('not-valid') || firstName.classList.contains('not-valid') ||
@@ -377,11 +378,6 @@ function validateSubmit() {
                 return response.json();
             })
             .then(function (data) {
-                // console.log(data);
-                // console.log(Object.getOwnPropertyNames(data.data));
-                // console.log(Object.values(data.data));
-                // console.log(data.hasOwnProperty('errors'));
-                // console.log(data.errors);
                 if (data.hasOwnProperty('data')) {
                     var keys = Object.keys(data.data);
                     for (var i = 1; i < keys.length; i++) {
@@ -405,4 +401,39 @@ function validateSubmit() {
                 alert('ERROR: Server or route error.');
             });
     }
+}
+
+document.addEventListener("DOMContentLoaded", reloadValues);
+
+function reloadValues() {
+    firstName.value = local.getItem('name');
+    savedName = local.getItem('name');
+
+    lastName.value = local.getItem('lastName');
+    savedLastName = local.getItem('lastName');
+
+    address.value = local.getItem('address');
+    savedAddress = local.getItem('address');
+
+    zipCode.value = local.getItem('zip');
+    savedZipCode = local.getItem('zip');
+
+    date.value = local.getItem('dob');
+    savedDate = local.getItem('dob');
+
+    phone.value = local.getItem('phone');
+    savedPhone = local.getItem('phone');
+
+    dni.value = local.getItem('dni');
+    savedDni = local.getItem('dni');
+
+    city.value = local.getItem('city');
+    savedCity = local.getItem('city');
+
+    email.value = local.getItem('email');
+    savedEmail = local.getItem('email');
+
+    password.value = local.getItem('password');
+    repeatPassword.value = local.getItem('password');
+    savedPassword = local.getItem('password');
 }
