@@ -17,6 +17,23 @@ input {
     border-bottom: 2px solid #aace9b;
 }
 
+form {
+    margin-bottom: 20px;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    height: 50px;
+    margin-top: 15px;
+}
+
+form div div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 button {
     color: azure;
     background-color: #aace9b;
@@ -50,10 +67,6 @@ button {
     transition: 0.4s;
 }
 
-form div {
-    margin: 15px 0;
-}
-
 .bottom-box {
     display: flex;
     flex-direction: column;
@@ -84,4 +97,5 @@ input[type=checkbox] {
 .alert {
     color: red;
     margin: 5px 0;
+    align-self: center;
 }

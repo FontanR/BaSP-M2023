@@ -29,7 +29,7 @@ var savedName;
 
 function isName(e) {
     var text = e.target.value;
-    if (text != text.toLowerCase() && !hasInteger(text) && !hasSymbol(text) && text.length > 3) {
+    if (text.substring(0, 1) != text.substring(0, 1).toLowerCase() && !hasInteger(text) && !hasSymbol(text) && text.length > 2) {
         savedName = text;
         firstName.onblur = function () {
             firstName.classList.remove('not-valid');
@@ -59,7 +59,7 @@ var savedLastName;
 
 function isLastName(e) {
     var text = e.target.value;
-    if (text != text.toLowerCase() && !hasInteger(text) && !hasSymbol(text) && text.length > 3) {
+    if (text != text.toLowerCase() && !hasInteger(text) && !hasSymbol(text) && text.length > 2) {
         savedLastName = text;
         lastName.onblur = function () {
             lastName.classList.remove('not-valid');
@@ -155,7 +155,7 @@ var savedDni;
 
 function isDNI(e) {
     var text = e.target.value;
-    if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length >= 7) {
+    if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length >= 7 && text.length < 11) {
         savedDni = text;
         dni.onblur = function () {
             dni.classList.remove('not-valid');
@@ -185,7 +185,7 @@ var savedPhone;
 
 function isPhone(e) {
     var text = e.target.value;
-    if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length >= 10) {
+    if (text.indexOf(' ') == -1 && text.toUpperCase() == text.toLowerCase() && !hasSymbol(text) && text.length > 9 && text.length < 11) {
         savedPhone = text;
         phone.onblur = function () {
             phone.classList.remove('not-valid');
@@ -245,7 +245,7 @@ var savedCity;
 
 function isCity(e) {
     var text = e.target.value;
-    if (text != text.toLowerCase() && !hasSymbol(text) && text.length > 3) {
+    if (text != text.toLowerCase() && !hasSymbol(text) && text.length > 2) {
         savedCity = text;
         city.onblur = function () {
             city.classList.remove('not-valid');
@@ -363,10 +363,12 @@ registerBtn.addEventListener('click', validateSubmit);
 var local = localStorage;
 
 function validateSubmit() {
-    if (email.classList.contains('not-valid') || password.classList.contains('not-valid') || firstName.classList.contains('not-valid') ||
-        lastName.classList.contains('not-valid') || dni.classList.contains('not-valid') || date.classList.contains('not-valid') ||
-        phone.classList.contains('not-valid') || zipCode.classList.contains('not-valid') || address.classList.contains('not-valid') ||
-        city.classList.contains('not-valid') || repeatPassword.classList.contains('not-valid')) {
+    if (email.classList.contains('not-valid') || email.value == '' || password.classList.contains('not-valid') || password.value == '' ||
+        firstName.classList.contains('not-valid') || firstName.value == '' || lastName.classList.contains('not-valid') ||
+        lastName.value == '' || dni.classList.contains('not-valid') || dni.value == '' || date.classList.contains('not-valid') ||
+        date.value == '' || phone.classList.contains('not-valid') ||  phone.value == '' || zipCode.classList.contains('not-valid') ||
+        zipCode.value == '' || address.classList.contains('not-valid') || address.value == '' || city.classList.contains('not-valid') ||
+        city.value == '' || repeatPassword.classList.contains('not-valid') || repeatPassword.value == '' ) {
         alert('There are some inputs with incorrect information.');
     } else {
         var url = 'https://api-rest-server.vercel.app/signup?name=' + savedName + '&lastName=' + savedLastName + '&dni=' +
@@ -378,6 +380,7 @@ function validateSubmit() {
                 return response.json();
             })
             .then(function (data) {
+                console.log(data);
                 if (data.hasOwnProperty('data')) {
                     var keys = Object.keys(data.data);
                     for (var i = 1; i < keys.length; i++) {

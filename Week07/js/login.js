@@ -44,10 +44,10 @@ function isEmail(e) {
             email.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('The email is incorrect.');
+            var textAlert = document.createTextNode('This input must be an email.');
             labelAlert.appendChild(textAlert);
-            var form = document.getElementById('form');
-            form.insertAdjacentElement('afterend', labelAlert);
+            var divEmail = document.querySelector('.mail-input');
+            divEmail.insertAdjacentElement('beforeend', labelAlert);
         }
         email.onfocus = function () {
             email.classList.remove('valid', 'not-valid');
@@ -76,10 +76,10 @@ function isPassword(e) {
             password.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('The password is incorrect');
+            var textAlert = document.createTextNode('At least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
             labelAlert.appendChild(textAlert);
-            var form = document.getElementById('form');
-            form.insertAdjacentElement('afterend', labelAlert);
+            var divPassword = document.querySelector('.password-input');
+            divPassword.insertAdjacentElement('beforeend', labelAlert);
         }
         password.onfocus = function () {
             password.classList.remove('valid', 'not-valid');
@@ -92,7 +92,7 @@ var loginBtn = document.getElementById('button');
 loginBtn.addEventListener('click', validateSubmit);
 
 function validateSubmit() {
-    if (email.classList.contains('not-valid') || password.classList.contains('not-valid')) {
+    if (email.classList.contains('not-valid') || email.value == '' || password.classList.contains('not-valid') || password.value == '') {
         alert('There are some inputs with incorrect information.');
     } else {
         var url = 'https://api-rest-server.vercel.app/login?email=' + savedEmail + '&password=' + savedPassword;      //     password: BaSProfessional1

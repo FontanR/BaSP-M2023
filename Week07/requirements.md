@@ -1,33 +1,33 @@
-# Validaciones
-## Nombre
-Solo letras, al menos debe tener 1 mayuscula y debe tener más de 3 letras.
+# Validations
+## Name
+Letters only, must be at least 3 characters long and the first character must be a capital letter.
 
-## Apellido
-Solo letras, al menos debe tener 1 mayuscula y debe tener más de 3 letras.
+## Last nam
+Letters only, must be at least 3 characters long and the first character must be a capital letter.
 
 ## DNI
-Solo números y debe tener más de 7 números. Sin espacios.
+Only numbers and must be between 7 and 10 characters long. No spaces.
 
-## Fecha de Nacimiento
-Con formato dd/mm/aaaa. El año debera ser igual o mayor a 2010 para asegurar que sea mayor a 13 años.
+## Date of Birth
+With format dd/mm/yyyy. The year must be equal to or greater than 2010 to ensure that you are older than 13 years old.
 
-## Teléfono
-Solo números y debe tener 10 números. Sin espacios.
+## Telephone
+Only numbers and must have 10 numbers. No spaces.
 
-## Dirección
-Al menos 5 caracteres con letras, números y si hay un espacio no puede estar ni en las primeras 3 posiciones ni en las ultimas 3.
+## Address
+At least 5 characters with letters, numbers and if there is a space it cannot be in the first 3 positions or in the last 3 positions.
 
-## Localidad
-Texto alfanumérico, debe tener más de 3 letras y poseer al menos 1 mayuscula.
+## Locality
+Alphanumeric text, must have at least 3 characters. And a capital letter.
 
-## Código Postal
-Solo números y debe tener entre 4 y 5 números. Sin espacios.
+## Postal Code
+Only numbers and must be between 4 and 5 numbers. No spaces.
 
 ## Email
-Debe tener un formato de email válido.
+Must be in a valid email format.
 
-## Contraseña
-Al menos 8 caracteres, formados por letras, números y simbolos. Debe tener al menos 1 letra mayuscula, una minuscula, un numero y un simbolo.
+## Password
+At least 8 characters, consisting of letters, numbers and symbols. Must have at least 1 uppercase letter, 1 lowercase letter, 1 number and 1 symbol.
 
-## Repetir Contraseña
-Ser identico al campo de contraseña.
+## Repeat Password
+Must be identical to the password field.
