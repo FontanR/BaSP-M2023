@@ -1,4 +1,3 @@
-// **************  VALIDATE NUMBERS  ********************
 function hasInteger(string) {
     var array = [];
     for (var i = 0; i < string.length; i++) {
@@ -10,19 +9,16 @@ function hasInteger(string) {
         }
     }
 }
-// **************  VALIDATE SYMBOLS  ********************
+
 function hasSymbol(string) {
     var symbols = '!@#$%^&*()_+=-?/.,<>`~';
     for (var i = 0; i < string.length; i++) {
-        for (var j = 0; j < symbols.length; j++) {
-            if (string[i] == symbols[j]) {
-                return true;
-            }
+        if (string.includes(symbols[i])) {
+            return true;
         }
     }
-    return false;
 }
-// **********  NAME  ***********
+
 var firstName = document.getElementById('name');
 firstName.addEventListener('keyup', isName);
 var savedName;
@@ -42,7 +38,7 @@ function isName(e) {
             firstName.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('This input must have only letters and at least 3 digits');
+            var textAlert = document.createTextNode('This input must have only letters and at least 3 digits and start with upper case.');
             labelAlert.appendChild(textAlert);
             firstName.insertAdjacentElement('afterend', labelAlert);
         }
@@ -52,7 +48,7 @@ function isName(e) {
         }
     }
 }
-// **********  LASTNAME  ************
+
 var lastName = document.getElementById('last-name');
 lastName.addEventListener('keyup', isLastName);
 var savedLastName;
@@ -82,7 +78,7 @@ function isLastName(e) {
         }
     }
 }
-// **************  EMAIL  ********************
+
 var email = document.getElementById('email');
 email.addEventListener('keyup', isEmail);
 var savedEmail;
@@ -114,13 +110,13 @@ function isEmail(e) {
         }
     }
 }
-// **************  DATE  ********************
+
 var date = document.getElementById('birth');
 date.addEventListener('change', isDate);
 var savedDate;
 
 function isDate() {
-    var text = document.getElementById('birth').value;                             //  CAMBIO EN EL FORMATO DE   MM/DD/YYYY
+    var text = document.getElementById('birth').value;
     if (text.substring(0, 4) <= 2010) {
         var year = text.substring(0, 4);
         var month = text.substring(5, 7);
@@ -148,7 +144,7 @@ function isDate() {
         }
     }
 }
-// **************  DNI  ********************
+
 var dni = document.getElementById('dni');
 dni.addEventListener('keyup', isDNI);
 var savedDni;
@@ -168,7 +164,7 @@ function isDNI(e) {
             dni.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('This input must have at least 7 numbers.');
+            var textAlert = document.createTextNode('This input must have between 7 and 10 numbers.');
             labelAlert.appendChild(textAlert);
             dni.insertAdjacentElement('afterend', labelAlert);
         }
@@ -178,7 +174,7 @@ function isDNI(e) {
         }
     }
 }
-// **************  PHONE  ********************
+
 var phone = document.getElementById('phone');
 phone.addEventListener('keyup', isPhone);
 var savedPhone;
@@ -208,7 +204,7 @@ function isPhone(e) {
         }
     }
 }
-// **************  ADRESS  ********************
+
 var address = document.getElementById('address');
 address.addEventListener('keyup', isAddress);
 var savedAddress;
@@ -238,7 +234,7 @@ function isAddress(e) {
         }
     }
 }
-// **************  CITY  ********************
+
 var city = document.getElementById('city');
 city.addEventListener('keyup', isCity);
 var savedCity;
@@ -268,7 +264,7 @@ function isCity(e) {
         }
     }
 }
-// **************  ZIP CODE  ********************
+
 var zipCode = document.getElementById('zip-code');
 zipCode.addEventListener('keyup', isZipCode);
 var savedZipCode;
@@ -298,14 +294,14 @@ function isZipCode(e) {
         }
     }
 }
-// **************  PASS  ********************
+
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
 var savedPassword;
 
 function isPassword(e) {
     var textPassword = e.target.value;
-    if (textPassword.indexOf(' ') == -1 /*&& hasSymbol(textPassword)*/ && textPassword != textPassword.toLowerCase() &&
+    if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
         textPassword != textPassword.toUpperCase() && hasInteger(textPassword) && textPassword.length >= 8) {
         savedPassword = textPassword;
         password.onblur = function () {
@@ -329,7 +325,7 @@ function isPassword(e) {
         }
     }
 }
-// **************  REPEAT PASS  ********************
+
 var repeatPassword = document.getElementById('repeat-password');
 repeatPassword.addEventListener('keyup', isTheSamePassword);
 
@@ -357,26 +353,57 @@ function isTheSamePassword(e) {
         }
     }
 }
-// **************  REGISTER BUTTON  ********************
+
 var registerBtn = document.getElementById('button');
 registerBtn.addEventListener('click', validateSubmit);
 var local = localStorage;
+var alerts = [];
 
 function validateSubmit() {
-    if (email.classList.contains('not-valid') || email.value == '' || password.classList.contains('not-valid') || password.value == '' ||
-        firstName.classList.contains('not-valid') || firstName.value == '' || lastName.classList.contains('not-valid') ||
-        lastName.value == '' || dni.classList.contains('not-valid') || dni.value == '' || date.classList.contains('not-valid') ||
-        date.value == '' || phone.classList.contains('not-valid') ||  phone.value == '' || zipCode.classList.contains('not-valid') ||
-        zipCode.value == '' || address.classList.contains('not-valid') || address.value == '' || city.classList.contains('not-valid') ||
-        city.value == '' || repeatPassword.classList.contains('not-valid') || repeatPassword.value == '' ) {
-        alert('There are some inputs with incorrect information.');
+    if (firstName.classList.contains('not-valid') || firstName.value == '') {
+        alerts.push('First name: This input must have only letters and at least 3 digits and starts with upper case.');
+    }
+    if (lastName.classList.contains('not-valid') || lastName.value == '') {
+        alerts.push('Last name: This input must have only letters and at least 3 digits and starts with upper case.');
+    }
+    if (email.classList.contains('not-valid') || email.value == '') {
+        alerts.push('Email: This input must be an email.');
+    }
+    if (date.classList.contains('not-valid') || date.value == '') {
+        alerts.push('Date: You must be at least 13 years old.');
+    }
+    if (dni.classList.contains('not-valid') || dni.value == '') {
+        alerts.push('DNI: This input must have between 7 and 10 numbers.');
+    }
+    if (phone.classList.contains('not-valid') ||  phone.value == '') {
+        alerts.push('Phone: This input must have 10 numbers.');
+    }
+    if (address.classList.contains('not-valid') || address.value == '') {
+        alerts.push('Address: This input must have at least 5 letters, 1 number and a blank space.');
+    }
+    if (city.classList.contains('not-valid') || city.value == '') {
+        alerts.push('City: This input must have at least 3 digits without symbols.');
+    }
+    if (zipCode.classList.contains('not-valid') || zipCode.value == '') {
+        alerts.push('Zip code: This input must have between 4 and 5 numbers.');
+    }
+    if (password.classList.contains('not-valid') || password.value == '') {
+        alerts.push('Password: At least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
+    }
+    if (repeatPassword.classList.contains('not-valid') || repeatPassword.value == '') {
+        alerts.push('Repeat password: This input must be exactly as the password input.')
+    }
+
+    if (alerts.length > 0) {
+        alert(alerts.join('\n'));
+        alerts = [];
     } else {
         var url = 'https://api-rest-server.vercel.app/signup?name=' + savedName + '&lastName=' + savedLastName + '&dni=' +
             savedDni + '&dob=' + savedDate + '&phone=' + savedPhone + '&address=' + savedAddress + '&city=' + savedCity + '&zip=' + savedZipCode +
             '&email=' + savedEmail + '&password=' + savedPassword;
 
         fetch(url)
-            .then(function (response) {                                                     //     password: BaSProfessional1
+            .then(function (response) {
                 return response.json();
             })
             .then(function (data) {

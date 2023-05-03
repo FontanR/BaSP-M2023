@@ -1,4 +1,3 @@
-// **************  VALIDATE NUMBERS  ********************
 function hasInteger(string) {
     var array = [];
     for (var i = 0; i < string.length; i++) {
@@ -10,7 +9,7 @@ function hasInteger(string) {
         }
     }
 }
-// **************  VALIDATE SYMBOLS  ********************
+
 function hasSymbol(string) {
     var symbols = '!@#$%^&*()_+=-?/.,<>`~';
     for (var i = 0; i < string.length; i++) {
@@ -22,7 +21,7 @@ function hasSymbol(string) {
     }
     return false;
 }
-// **************  EMAIL  ********************
+
 var email = document.getElementById('email');
 email.addEventListener('keyup', isEmail);
 var savedEmail;
@@ -55,14 +54,14 @@ function isEmail(e) {
         }
     }
 }
-// **************  PASS  ********************
+
 var password = document.getElementById('password');
 password.addEventListener('keyup', isPassword);
 var savedPassword;
 
 function isPassword(e) {
     var textPassword = e.target.value;
-    if (textPassword.indexOf(' ') == -1 /*&& hasSymbol(textPassword)*/ && textPassword != textPassword.toLowerCase() &&
+    if (textPassword.indexOf(' ') == -1 && hasSymbol(textPassword) && textPassword != textPassword.toLowerCase() &&
         textPassword != textPassword.toUpperCase() && hasInteger(textPassword) && textPassword.length >= 8) {
         savedPassword = textPassword;
         password.onblur = function () {
@@ -76,7 +75,7 @@ function isPassword(e) {
             password.classList.add('not-valid');
             labelAlert = document.createElement('span');
             labelAlert.className = 'alert';
-            var textAlert = document.createTextNode('At least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
+            var textAlert = document.createTextNode('This input must be your password.');
             labelAlert.appendChild(textAlert);
             var divPassword = document.querySelector('.password-input');
             divPassword.insertAdjacentElement('beforeend', labelAlert);
@@ -87,15 +86,23 @@ function isPassword(e) {
         }
     }
 }
-// **************  LOGIN BUTTON  ********************
+
 var loginBtn = document.getElementById('button');
 loginBtn.addEventListener('click', validateSubmit);
+var alerts = [];
 
 function validateSubmit() {
-    if (email.classList.contains('not-valid') || email.value == '' || password.classList.contains('not-valid') || password.value == '') {
-        alert('There are some inputs with incorrect information.');
+    if (email.classList.contains('not-valid') || email.value == '') {
+        alerts.push('Email: This input must be an email.');
+    }
+    if (password.classList.contains('not-valid') || password.value == '') {
+        alerts.push('Password: At least 8 characters with at least 1 upper case letter, 1 lower case, 1 number and 1 symbol.');
+    }
+    if (alerts.length > 0) {
+        alert(alerts.join('\n'));
+        alerts = [];
     } else {
-        var url = 'https://api-rest-server.vercel.app/login?email=' + savedEmail + '&password=' + savedPassword;      //     password: BaSProfessional1
+        var url = 'https://api-rest-server.vercel.app/login?email=' + savedEmail + '&password=' + savedPassword;
         fetch(url)
             .then(function (response) {
                 return response.json();
